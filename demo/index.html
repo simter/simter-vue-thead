@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <title>st-colgroup Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="demo">
+    <h2>Simple Columns :</h2>
+    <pre>| X1 | X2 | X3 |</pre>
+    <table border="1" style="border-collapse:collapse">
+      <colgroup is="st-colgroup" :columns="simpleColumns"></colgroup>
+      <thead is="st-thead" :columns="simpleColumns"></thead>
+    </table>
+
+    <h2>Complex Columns :</h2>
+    <pre>
+| X1 |     X2    | X3 |         X4        |
+|    | X21 | X22 |    |     X41     | X42 |
+|    |     |     |    | X411 | X412 |     |</pre>
+    <table border="1" style="border-collapse:collapse">
+      <colgroup is="st-colgroup" :columns="complexColumns"></colgroup>
+      <thead is="st-thead" :columns="complexColumns"></thead>
+    </table>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
