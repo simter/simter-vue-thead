@@ -1,10 +1,12 @@
 <template>
-<thead>
-  <tr v-for="n in rowCount" :key="'row' + n">
+<thead :class="headClass">
+  <tr v-for="n in rowCount" :key="'head-row-' + n" :class="rowClass">
     <th v-for="(c, index) in rowColumns(n - 1)"
-        :key="'cell' + index"
+        :key="'head-cell-' + index"
         :colspan="c.$_colspan"
-        :rowspan="c.$_rowspan">{{c.label}}</th>
+        :rowspan="c.$_rowspan"
+        :class="getCellClass(c)"
+        >{{c.label}}</th>
   </tr>
 </thead>
 </template>
@@ -47,7 +49,12 @@ function getLeafCount(column) {
 export default {
   replace: true,
   props: {
-    columns: { type: Array, required: true }
+    columns: { type: Array, required: true },
+    headClass: { type: String | Array, required: false },
+    rowClass: { type: String | Array, required: false },
+    cellClass: { type: String | Array, required: false },
+    // ellipsis | hidden | word-wrap
+    textOverflow: { type: String, required: false }
   },
   created: function() {
     // calculate each column's depth, rowIndex
@@ -95,7 +102,37 @@ export default {
     /** The rows to render in the specific rowIndex */
     rowColumns: function(rowIndex) {
       return this.flattenColumns.filter(c => c.$_rowIndex === rowIndex);
+    },
+    getCellClass(column) {
+      let classes = [];
+
+      // `column.headCellClass` has high priority than `this.cellClass`
+      if (column.headCellClass) classes = classes.concat(column.headCellClass);
+      else classes = classes.concat(this.cellClass);
+
+      // textOverflow:  ellipsis | hidden | word-wrap
+      if (this.textOverflow === "ellipsis") classes.push("st-thead-cell ellipsis");
+      else if (this.textOverflow === "hidden") classes.push("st-thead-cell hidden");
+      else if (this.textOverflow === "word-wrap")
+        classes.push("st-thead-cell word-wrap");
+
+      return classes.length ? classes.join(" ") : null;
     }
   }
 };
 </script>
+
+<style>
+.st-thead-cell.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.st-thead-cell.hidden {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.st-thead-cell.word-wrap {
+  word-break: break-all;
+}
+</style>

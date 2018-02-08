@@ -9,8 +9,8 @@ window.onload = function () {
     el: "#demo",
     data: {
       simpleColumns: [
-        { label: "X1", width: "100px" },
-        { label: "X2", width: "100px" },
+        { label: "X1", width: "100px", headCellClass: "test1 test2" },
+        { label: "X2 long text", width: "100px" },
         { label: "X3", width: "100px" }
       ],
       complexColumns: [
@@ -33,7 +33,7 @@ window.onload = function () {
                 { label: "X412", width: "100px" }
               ]
             },
-            { label: "X42", width: "100px" }
+            { label: "X42 long text long text long text long text", width: "100px" }
           ]
         }
       ]

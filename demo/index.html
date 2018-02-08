@@ -6,16 +6,27 @@
   <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
   <title>st-colgroup Demo</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <style>
+    .head {background-color: rgb(245, 238, 238)}
+  </style>
 </head>
 
 <body>
   <div id="demo">
     <h2>Simple Columns :</h2>
     <pre>| X1 | X2 | X3 |</pre>
-    <table border="1" style="border-collapse:collapse">
+    <table border="1" style="border-collapse:collapse;table-layout:fixed;width:1px">
       <colgroup is="st-colgroup" :columns="simpleColumns"></colgroup>
-      <thead is="st-thead" :columns="simpleColumns"></thead>
+      <thead is="st-thead" :columns="simpleColumns"
+            head-class="head"
+            row-class="row"
+            cell-class="cell" text-overflow="ellipsis"></thead>
     </table>
+    <p>Attention: To make td has ellipsis text, need to set `table-layout:fixed` 
+      and a suitable width on the table element, 
+      and set component property `text-overflow="ellipsis"`.
+      Or set `text-overflow="hidden"` to hide the overflow text.
+    </p>
 
     <h2>Complex Columns :</h2>
     <pre>
