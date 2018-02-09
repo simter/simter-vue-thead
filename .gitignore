@@ -9,7 +9,6 @@ Thumbs.db
 *.log.*
 build
 bin
-dist
 .DS_Store
 .idea
 *.iml

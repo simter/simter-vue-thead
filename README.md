@@ -1,4 +1,4 @@
-Simter `thead` component.
+Simter `thead` component. See [docs](https://simter.github.io/simter-vue-thead).
 
 # Initial
 
@@ -23,19 +23,6 @@ npm run build
 ```
 
 Use [rollup] package the component to `dist` directory.
-
-# Usage
-
-```
-import thead from 'simter-vue-thead'
-
-Vue.component('st-thead', thead)
-new Vue({
-  el: "#demo"
-})
-```
-
-See details from [demo/index.html](demo/index.html).
 
 [rollup]: https://rollupjs.org
 [parcel]: https://parceljs.org

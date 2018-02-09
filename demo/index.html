@@ -7,7 +7,9 @@
   <title>st-colgroup Demo</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   <style>
-    .head {background-color: rgb(245, 238, 238)}
+    body {background-color: #000; color: #888}
+    .head {background-color: #444}
+    th {border: 1px solid #888}
   </style>
 </head>
 
@@ -33,7 +35,7 @@
 | X1 |     X2    | X3 |         X4        |
 |    | X21 | X22 |    |     X41     | X42 |
 |    |     |     |    | X411 | X412 |     |</pre>
-    <table border="1" style="border-collapse:collapse">
+    <table style="border-collapse:collapse">
       <colgroup is="st-colgroup" :columns="complexColumns"></colgroup>
       <thead is="st-thead" :columns="complexColumns"></thead>
     </table>

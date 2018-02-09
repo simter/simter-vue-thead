@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <title>st-colgroup Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+  <script src="https://rawgit.com/simter/simter-vue-colgroup/master/dist/simter-vue-colgroup.min.js"></script>
+  <script src="https://rawgit.com/simter/simter-vue-thead/master/dist/simter-vue-thead.min.js"></script>
+  <style>
+    body {background-color: #000; color: #888}
+    .head {background-color: #444}
+    th {border: 1px solid #888}
+    a {color: #888}
+  </style>
+</head>
+
+<body>
+  <h2>Simter <code>thead</code> vue component.</h2>
+  <a href="http://github.com/simter/simter-vue-thead">Fork me on Github</a>
+  <p>The target is to config the <code>table</code> <code>thead</code> by a array config. 
+    Use together with <a href="http://github.com/simter/simter-vue-colgroup">simter-vue-colgroup</a> component.</p>
+
+<pre>
+// html
+&lt;table style="border-collapse:collapse"&gt;
+  &lt;colgroup <b>is="st-colgroup"</b> :columns="columns"&gt;&lt;/colgroup&gt;
+  <b>&lt;thead is="st-thead" :columns="columns"
+         head-class="head"             -- Optional
+         row-class="row"               -- Optional
+         cell-class="cell"             -- Optional
+         text-overflow="ellipsis"&gt;     -- Optional
+  &lt;/thead&gt;</b>
+&lt;/table&gt;</pre>
+
+  <h3>Example 1: Simple Columns</h3>
+<pre>
+// config
+columns = [
+  { width: "100px", label: "X1",headCellClass: "test" },
+  { width: "100px", label: "X2 long text" },
+  { width: "100px", label: "X3" }
+]
+
+// Result
+| X1 | X2 | X3 |
+</pre>
+  <table id="demo1" border="1" style="border-collapse:collapse;table-layout:fixed;width:1px">
+    <colgroup is="st-colgroup" :columns="columns"></colgroup>
+    <thead is="st-thead" :columns="columns"
+           head-class="head"
+           row-class="row"
+           cell-class="cell"
+           text-overflow="ellipsis">
+    </thead>
+  </table>
+  <p>Attention: 'text-overflow' value can be 'ellipsis', 'hidden' or 'word-wrap'.
+  </p>
+
+  <h2>Example 2: Complex Columns</h2>
+  <pre>
+// config
+columns = [
+  { width: "100px", label: "X1" },
+  {
+    width: "100px", label: "X2",
+    children: [
+      { width: "100px", label: "X21" },
+      { width: "100px", label: "X22" }
+    ]
+  },
+  { width: "100px", label: "X3" },
+  {
+    width: "100px", label: "X4",
+    children: [
+      {
+        width: "100px", label: "X41",
+        children: [
+          { width: "100px", label: "X411" },
+          { width: "100px", label: "X412" }
+        ]
+      },
+      { width: "100px", label: "X42 long text long text long text long text" }
+    ]
+  }
+]
+
+// Result
+| X1 |     X2    | X3 |         X4        |
+|    | X21 | X22 |    |     X41     | X42 |
+|    |     |     |    | X411 | X412 |     |
+</pre>
+  <table id="demo2" border="1" style="border-collapse:collapse">
+    <colgroup is="st-colgroup" :columns="columns"></colgroup>
+    <thead is="st-thead" :columns="columns"></thead>
+  </table>
+  <p>Attention: Will auto judge the column group by the nested children config.
+  </p>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>

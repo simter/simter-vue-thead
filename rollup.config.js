@@ -9,6 +9,6 @@ export default {
     { file: pkg.module, format: 'es' }
   ],
   plugins: [
-    vue({ compileTemplate: true, css: false })
+    vue({ compileTemplate: true, css: true })
   ]
 };
