@@ -1,6 +1,6 @@
 {
   "name": "simter-vue-thead",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simter thead component",
   "main": "dist/simter-vue-thead.js",
   "module": "dist/simter-vue-thead.esm.js",
@@ -22,7 +22,7 @@
     "min-js": "uglifyjs dist/simter-vue-thead.js -o dist/simter-vue-thead.min.js --source-map=url"
   },
   "devDependencies": {
-    "simter-vue-colgroup": "~0.1.0",
+    "simter-vue-colgroup": "~0.1.1",
     "babel-preset-env": "~1.6.1",
     "parcel-bundler": "~1.5.1",
     "parcel-plugin-vue": "~1.5.0",
