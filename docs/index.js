@@ -3,7 +3,7 @@ window.onload = function () {
   Vue.component("st-thead", window["simter-vue-thead"]);
 
   new Vue({
-    el: "#demo1",
+    el: "#sample1",
     data: {
       columns: [
         { width: "100px", label: "X1", headCellClass: "test" },
@@ -14,7 +14,7 @@ window.onload = function () {
   });
 
   new Vue({
-    el: "#demo2",
+    el: "#sample2",
     data: {
       columns: [
         { width: "100px", label: "X1" },

@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
-  <title>st-colgroup Demo</title>
+  <title>st-thead docs</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
-  <script src="https://rawgit.com/simter/simter-vue-colgroup/master/dist/simter-vue-colgroup.min.js"></script>
+  <script src="https://rawgit.com/simter/simter-vue-colgroup/0.1.1/dist/simter-vue-colgroup.min.js"></script>
   <script src="https://rawgit.com/simter/simter-vue-thead/master/dist/simter-vue-thead.min.js"></script>
   <style>
     body {background-color: #000; color: #888}
-    .head {background-color: #444}
-    th {border: 1px solid #888}
+    hr {border-color: #888}
     a {color: #888}
   </style>
 </head>
 
 <body>
-  <h2>Simter <code>thead</code> vue component.</h2>
+  <h1>simter-vue-thead</h1>
+  <hr>
   <a href="http://github.com/simter/simter-vue-thead">Fork me on Github</a>
   <p>The target is to config the <code>table</code> <code>thead</code> by a array config. 
     Use together with <a href="http://github.com/simter/simter-vue-colgroup">simter-vue-colgroup</a> component.</p>
@@ -34,11 +34,11 @@
   &lt;/thead&gt;</b>
 &lt;/table&gt;</pre>
 
-  <h3>Example 1: Simple Columns</h3>
+  <h2>Example 1 : Simple Columns</h2>
 <pre>
 // config
 columns = [
-  { width: "100px", label: "X1",headCellClass: "test" },
+  { width: "100px", label: "X1", headCellClass: "test" },
   { width: "100px", label: "X2 long text" },
   { width: "100px", label: "X3" }
 ]
@@ -46,7 +46,7 @@ columns = [
 // Result
 | X1 | X2 | X3 |
 </pre>
-  <table id="demo1" border="1" style="border-collapse:collapse;table-layout:fixed;width:1px">
+  <table id="sample1" border="1" style="border-collapse:collapse;table-layout:fixed;width:1px">
     <colgroup is="st-colgroup" :columns="columns"></colgroup>
     <thead is="st-thead" :columns="columns"
            head-class="head"
@@ -58,7 +58,7 @@ columns = [
   <p>Attention: 'text-overflow' value can be 'ellipsis', 'hidden' or 'word-wrap'.
   </p>
 
-  <h2>Example 2: Complex Columns</h2>
+  <h2>Example 2 : Complex Columns</h2>
   <pre>
 // config
 columns = [
@@ -91,7 +91,7 @@ columns = [
 |    | X21 | X22 |    |     X41     | X42 |
 |    |     |     |    | X411 | X412 |     |
 </pre>
-  <table id="demo2" border="1" style="border-collapse:collapse">
+  <table id="sample2" border="1" style="border-collapse:collapse">
     <colgroup is="st-colgroup" :columns="columns"></colgroup>
     <thead is="st-thead" :columns="columns"></thead>
   </table>
