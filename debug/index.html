@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <title>st-colgroup Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <style>
+    body {background-color: #000; color: #888}
+    hr {border-color: #888}
+  </style>
+</head>
+
+<body>
+  <h1>simter-vue-thead</h1>
+  <hr>
+  <h2>Example 1 : Simple Columns</h2>
+  <pre>| X1 | X2 | X3 |</pre>
+  <table id="sample1" border="1">
+    <thead is="st-thead" :columns="columns"></thead>
+  </table>
+
+  <h2>Example 2 : Group Columns</h2>
+  <pre>
+| X1 |     X2    | X3 |
+|    | X21 | X22 |    |</pre>
+  <table id="sample2" border="1">
+    <thead is="st-thead" :columns="columns"></thead>
+  </table>
+
+  <h2>Example 3 : Complex Columns (with simter-vue-colgroup)</h2>
+  <pre>
+| X1 |     X2    | X3 |         X4        |
+|    | X21 | X22 |    |     X41     | X42 |
+|    |     |     |    | X411 | X412 |     |</pre>
+  <table id="sample3" border="1">
+    <colgroup is="st-colgroup" :columns="columns"></colgroup>
+    <thead is="st-thead" :columns="columns"></thead>
+  </table>
+  <script src="./index.js"></script>
+</body>
+
+</html>
