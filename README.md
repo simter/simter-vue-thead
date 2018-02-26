@@ -1,6 +1,6 @@
 # simter-vue-thead component
 
-Use to generate table's thead content.
+Define table's thead by a string array. Such as `columns = ["Column1", "Column2"]`.
 Demo or document is [here](https://simter.github.io/simter-vue-thead).
 
 ## Develop
@@ -22,7 +22,7 @@ Use [rollup] package the component to `dist` directory.
 
 ## Usage
 
-## Example 1 : Simple Columns
+### Example 1 : Simple Columns
 
 Js:
 
@@ -32,11 +32,7 @@ import thead from 'simter-vue-thead'
 new Vue({
   el: "#sample",
   data: {
-    columns: [
-      { label: "X1" },
-      { label: "X2" },
-      { label: "X3" }
-    ]
+    columns: ["X1", "X2", "X3"]
   },
   components: {
     "st-thead": thead
@@ -71,7 +67,7 @@ Generated html:
 </table>
 ```
 
-## Example 2 : Group Columns
+### Example 2 : Group Columns
 
 Js:
 
@@ -82,12 +78,12 @@ new Vue({
   el: "#sample",
   data: {
     columns: [
-      { label: "X1" },
+      "X1",
       {
         label: "X2",
         children: [
           { label: "X21" },
-          { label: "X22" }
+          "X22"
         ]
       },
       { label: "X3" }
@@ -112,26 +108,28 @@ Generated html:
 
 ```html
 <!--
-| X1 |    X2     | X3 |
-|    | X21 | X22 |    |
+| X1 |    X2     |    X3     |
+|    | X21 | X22 | X31 | X32 |
 -->
 <table>
   <thead>
     <tr>
       <th rowspan="2">X1</th>
       <th colspan="2">X2</th>
-      <th rowspan="2">X3</th>
+      <th colspan="2">X3</th>
     </tr>
     <tr>
       <th>X21</th>
       <th>X22</th>
+      <th>X31</th>
+      <th>X32</th>
     </tr>
   </thead>
   ...
 </table>
 ```
 
-## Example 3 : Complex Group Columns
+### Example 3 : Complex Group Columns
 
 Js:
 
