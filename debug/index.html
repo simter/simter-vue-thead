@@ -22,20 +22,37 @@
     <thead is="st-thead" :columns="columns"></thead>
   </table>
 
-  <h2>Example 2 : Group Columns</h2>
+  <h2>Example 2 : Nested 1-1 Group Columns </h2>
   <pre>
 | X1 |     X2    | X3 |
 |    | X21 | X22 |    |</pre>
-  <table id="sample2" border="1">
+  <table id="sample-nested-1-1" border="1">
     <thead is="st-thead" :columns="columns"></thead>
   </table>
 
-  <h2>Example 3 : Complex Columns (with simter-vue-colgroup)</h2>
+  <h2>Example 3 : Nested 1-2 Group Columns</h2>
+  <pre>
+| X1 |     X2    |     X3    |
+|    | X21 | X22 | X31 | X32 |</pre>
+  <table id="sample-nested-1-2" border="1">
+    <thead is="st-thead" :columns="columns"></thead>
+  </table>
+
+  <h2>Example 4 : Nested 2 Group Columns</h2>
+  <pre>
+| X1 |        X2         | X3 |
+|    | X21 |     X22     |    |
+|    |     | X221 | X222 |    |</pre>
+  <table id="sample-nested-2" border="1">
+    <thead is="st-thead" :columns="columns"></thead>
+  </table>
+
+  <h2>Example 5 : Complex Columns (with column width)</h2>
   <pre>
 | X1 |     X2    | X3 |         X4        |
 |    | X21 | X22 |    |     X41     | X42 |
 |    |     |     |    | X411 | X412 |     |</pre>
-  <table id="sample3" border="1">
+  <table id="sample-complex-1" border="1">
     <colgroup is="st-colgroup" :columns="columns"></colgroup>
     <thead is="st-thead" :columns="columns"></thead>
   </table>

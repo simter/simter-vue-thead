@@ -17,7 +17,7 @@ window.onload = function () {
   });
 
   new Vue({
-    el: "#sample2",
+    el: "#sample-nested-1-1",
     data: {
       columns: [
         { label: "X1" },
@@ -37,7 +37,59 @@ window.onload = function () {
   });
 
   new Vue({
-    el: "#sample3",
+    el: "#sample-nested-1-2",
+    data: {
+      columns: [
+        { label: "X1" },
+        {
+          label: "X2",
+          children: [
+            { label: "X21" },
+            { label: "X22" }
+          ]
+        },
+        {
+          label: "X3",
+          children: [
+            { label: "X31" },
+            { label: "X32" }
+          ]
+        }
+      ]
+    },
+    components: {
+      "st-thead": thead
+    }
+  });
+
+  new Vue({
+    el: "#sample-nested-2",
+    data: {
+      columns: [
+        { label: "X1" },
+        {
+          label: "X2",
+          children: [
+            { label: "X21" },
+            {
+              label: "X22",
+              children: [
+                { label: "X221" },
+                "X222"
+              ]
+            }
+          ]
+        },
+        { label: "X3" }
+      ]
+    },
+    components: {
+      "st-thead": thead
+    }
+  });
+
+  new Vue({
+    el: "#sample-complex-1",
     data: {
       columns: [
         { label: "X1", width: "100px" },
