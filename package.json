@@ -2,6 +2,13 @@
   "name": "simter-vue-thead",
   "version": "0.1.1",
   "description": "Simter thead component",
+  "keywords": [
+    "simter",
+    "vue",
+    "thead",
+    "rollup",
+    "parcel"
+  ],
   "main": "dist/simter-vue-thead.js",
   "module": "dist/simter-vue-thead.esm.js",
   "repository": "https://github.com/simter/simter-vue-thead.git",
