@@ -1,5 +1,5 @@
 window.onload = function () {
-  let colgroup = window["simter-vue-colgroup"];
+  let colgroup = window["simter-vue-colgroup"].default;
   let thead = window["simter-vue-thead"].default;
 
   new Vue({
