@@ -19,8 +19,7 @@
     "dist",
     "docs",
     "debug",
-    "rollup.config.js",
-    ".babelrc"
+    "rollup.config.js"
   ],
   "scripts": {
     "start": "npm run dev",
