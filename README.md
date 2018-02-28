@@ -1,6 +1,6 @@
-# simter-vue-thead component
+# Component simter-vue-thead
 
-Define table's thead by structured data. Such as `columns = ["X1", "X2"]` or 
+Define table's thead tag by structured data. Such as `columns = ["X1", "X2"]` or 
 `columns = ["X1", {label: "X2", children: ["X21", "X22"]}]`.
 Demo or document is [here](https://simter.github.io/simter-vue-thead).
 

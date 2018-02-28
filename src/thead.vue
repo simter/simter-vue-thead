@@ -31,8 +31,7 @@ const component = {
     rows() {
       return transform(deepClone(this.columns));
     }
-  },
-  transform: transform
+  }
 };
 
 /**
