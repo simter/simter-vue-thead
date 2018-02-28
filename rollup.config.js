@@ -11,10 +11,9 @@ let banner = `/*!
 export default {
   input: 'src/thead.vue',
   output: [
-    { file: pkg.main, format: 'umd', name: pkg.name },
-    { file: pkg.module, format: 'es' }
+    { file: pkg.main, format: 'umd', name: pkg.name, banner: banner },
+    { file: pkg.module, format: 'es', banner: banner }
   ],
-  banner: banner,
   plugins: [
     vue({ compileTemplate: true, css: true })
   ]
