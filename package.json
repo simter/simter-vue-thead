@@ -27,7 +27,7 @@
     "test": "ava",
     "clean": "rm -rf dist/* temp/*",
     "build": "npm run clean && npm test && rollup -c && npm run min-js",
-    "min-js": "uglifyjs dist/simter-vue-thead.js -o dist/simter-vue-thead.min.js --source-map=url",
+    "min-js": "uglifyjs --comments /^!/ dist/simter-vue-thead.js -o dist/simter-vue-thead.min.js --source-map=url",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
