@@ -1,6 +1,7 @@
 # simter-vue-thead component
 
-Define table's thead by a string array. Such as `columns = ["Column1", "Column2"]`.
+Define table's thead by structured data. Such as `columns = ["X1", "X2"]` or 
+`columns = ["X1", {label: "X2", children: ["X21", "X22"]}]`.
 Demo or document is [here](https://simter.github.io/simter-vue-thead).
 
 ## Develop
@@ -81,12 +82,12 @@ new Vue({
       "X1",
       {
         label: "X2",
-        children: [
-          { label: "X21" },
-          "X22"
-        ]
+        children: ["X21", "X22"]
       },
-      { label: "X3" }
+      {
+        label: "X3",
+        children: ["X31", "X32"]
+      },
     ]
   },
   components: {

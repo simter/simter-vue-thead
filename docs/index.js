@@ -1,15 +1,14 @@
 window.onload = function () {
-  Vue.component("st-colgroup", window["simter-vue-colgroup"]);
-  Vue.component("st-thead", window["simter-vue-thead"]);
+  let colgroup = window["simter-vue-colgroup"];
+  let thead = window["simter-vue-thead"].default;
 
   new Vue({
     el: "#sample1",
     data: {
-      columns: [
-        { width: "100px", label: "X1", headCellClass: "test" },
-        { width: "100px", label: "X2 long text" },
-        { width: "100px", label: "X3" }
-      ]
+      columns: ["X1", "X2", "X3"]
+    },
+    components: {
+      "st-thead": thead
     }
   });
 
@@ -17,29 +16,80 @@ window.onload = function () {
     el: "#sample2",
     data: {
       columns: [
-        { width: "100px", label: "X1" },
+        "X1",
         {
-          width: "100px", label: "X2",
+          label: "X2",
+          children: ["X21", "X22"]
+        },
+        {
+          label: "X3",
+          children: ["X31", "X32"]
+        }
+      ]
+    },
+    components: {
+      "st-thead": thead
+    }
+  });
+
+  new Vue({
+    el: "#sample3",
+    data: {
+      columns: [
+        { label: "X2", width: "50px" },
+        {
+          label: "X2",
           children: [
-            { width: "100px", label: "X21" },
-            { width: "100px", label: "X22" }
+            { label: "X21", width: "50px" },
+            { label: "X22", width: "50px" }
           ]
         },
-        { width: "100px", label: "X3" },
         {
-          width: "100px", label: "X4",
+          label: "X3",
           children: [
-            {
-              width: "100px", label: "X41",
-              children: [
-                { width: "100px", label: "X411" },
-                { width: "100px", label: "X412" }
-              ]
-            },
-            { width: "100px", label: "X42 long text long text long text long text" }
+            { label: "X31", width: "50px" },
+            { label: "X32", width: "50px" }
           ]
         }
       ]
+    },
+    components: {
+      "st-colgroup": colgroup,
+      "st-thead": thead
+    }
+  });
+
+  new Vue({
+    el: "#sample4",
+    data: {
+      columns: [
+        { label: "X1", width: "50px" },
+        {
+          label: "X2",
+          children: [
+            { label: "X21", width: "50px" },
+            { label: "X22", width: "50px" }
+          ]
+        },
+        { label: "X3", width: "50px" },
+        {
+          label: "X4",
+          children: [
+            {
+              label: "X41",
+              children: [
+                { label: "X411", width: "100px" },
+                { label: "X412", width: "100px" }
+              ]
+            },
+            { label: "X42", width: "50px" }
+          ]
+        }
+      ]
+    },
+    components: {
+      "st-colgroup": colgroup,
+      "st-thead": thead
     }
   });
 };
