@@ -1,8 +1,16 @@
-# Component simter-vue-thead
+# Vue Component simter-vue-thead
 
 Define table's thead tag by structured data. Such as `columns = ["X1", "X2"]` or 
 `columns = ["X1", {label: "X2", children: ["X21", "X22"]}]`.
 Demo or document is [here](https://simter.github.io/simter-vue-thead).
+
+Core properties:
+
+| Name                             | Description
+|----------------------------------|--------------------
+| columns                          | Define table columns
+| &nbsp;&nbsp;&nbsp;&nbsp;label    | The column's visible text
+| &nbsp;&nbsp;&nbsp;&nbsp;children | Define how to group columns
 
 ## Develop
 
@@ -70,6 +78,8 @@ Generated html:
 
 ### Example 2 : Group Columns
 
+Use `children` key to define the group.
+
 Js:
 
 ```js
@@ -131,6 +141,8 @@ Generated html:
 ```
 
 ### Example 3 : Complex Group Columns
+
+Use `children` key to define any level nested group columns.
 
 Js:
 
