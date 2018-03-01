@@ -260,18 +260,3 @@ export {
 
 export default component;
 </script>
-
-<style>
-.st-thead-cell.ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.st-thead-cell.hidden {
-  overflow: hidden;
-  white-space: nowrap;
-}
-.st-thead-cell.word-wrap {
-  word-break: break-all;
-}
-</style>
