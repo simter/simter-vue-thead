@@ -1,124 +1,31 @@
-import colgroup from 'simter-vue-colgroup'
-import thead from '../src/thead.vue'
+import Vue from 'vue'
+import example1 from './example1.vue'
+import example2 from './example2.vue'
+import example3 from './example3.vue'
+import example4 from './example4.vue'
+import example5 from './example5.vue'
 
-window.onload = function () {
-  new Vue({
-    el: "#sample1",
-    data: {
-      columns: [
-        { label: "X1" },
-        { label: "X2" },
-        { label: "X3" }
-      ]
-    },
-    components: {
-      "st-thead": thead
-    }
-  });
+new Vue({
+  el: "#sample1",
+  render: h => h(example1)
+})
 
-  new Vue({
-    el: "#sample-nested-1-1",
-    data: {
-      columns: [
-        { label: "X1" },
-        {
-          label: "X2",
-          children: [
-            { label: "X21" },
-            { label: "X22" }
-          ]
-        },
-        { label: "X3" }
-      ]
-    },
-    components: {
-      "st-thead": thead
-    }
-  });
+new Vue({
+  el: "#sample2",
+  render: h => h(example2)
+})
 
-  new Vue({
-    el: "#sample-nested-1-2",
-    data: {
-      columns: [
-        { label: "X1" },
-        {
-          label: "X2",
-          children: [
-            { label: "X21" },
-            { label: "X22" }
-          ]
-        },
-        {
-          label: "X3",
-          children: [
-            { label: "X31" },
-            { label: "X32" }
-          ]
-        }
-      ]
-    },
-    components: {
-      "st-thead": thead
-    }
-  });
+new Vue({
+  el: "#sample3",
+  render: h => h(example3)
+})
 
-  new Vue({
-    el: "#sample-nested-2",
-    data: {
-      columns: [
-        { label: "X1" },
-        {
-          label: "X2",
-          children: [
-            { label: "X21" },
-            {
-              label: "X22",
-              children: [
-                { label: "X221" },
-                "X222"
-              ]
-            }
-          ]
-        },
-        { label: "X3" }
-      ]
-    },
-    components: {
-      "st-thead": thead
-    }
-  });
+new Vue({
+  el: "#sample4",
+  render: h => h(example4)
+})
 
-  new Vue({
-    el: "#sample-complex-1",
-    data: {
-      columns: [
-        { label: "X1", width: "100px" },
-        {
-          label: "X2",
-          children: [
-            { label: "X21", width: "100px" },
-            { label: "X22", width: "100px" }
-          ]
-        },
-        { label: "X3", width: "100px" },
-        {
-          label: "X4",
-          children: [
-            {
-              label: "X41",
-              children: [
-                { label: "X411", width: "150px" },
-                { label: "X412", width: "150px" }
-              ]
-            },
-            { label: "X42", width: "100px" }
-          ]
-        }
-      ]
-    },
-    components: {
-      "st-colgroup": colgroup,
-      "st-thead": thead
-    }
-  });
-}
+new Vue({
+  el: "#sample5",
+  render: h => h(example5)
+})

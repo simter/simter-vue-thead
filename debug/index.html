@@ -5,57 +5,23 @@
   <meta charset="UTF-8">
   <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
   <title>st-thead debug</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   <style>
-    body {background-color: #000; color: #888}
-    hr {border-color: #888}
-    a {color: #888}
+    body { background-color: #000; color: #888 }
+    th { border: 1px solid #888 }
+    a { color: #888}
+    h1 { color: #eee }
+    h2, b, .template { color: #bbb }
+    .block { border-bottom: 1px solid #333 }
   </style>
 </head>
 
 <body>
-  <h1>Component simter-vue-thead</h1>
-  <hr>
-  <h2>Example 1 : Simple Columns</h2>
-  <pre>| X1 | X2 | X3 |</pre>
-  <table id="sample1" border="1">
-    <thead is="st-thead" :columns="columns"></thead>
-  </table>
-
-  <h2>Example 2 : Nested 1-1 Group Columns </h2>
-  <pre>
-| X1 |     X2    | X3 |
-|    | X21 | X22 |    |</pre>
-  <table id="sample-nested-1-1" border="1">
-    <thead is="st-thead" :columns="columns"></thead>
-  </table>
-
-  <h2>Example 3 : Nested 1-2 Group Columns</h2>
-  <pre>
-| X1 |     X2    |     X3    |
-|    | X21 | X22 | X31 | X32 |</pre>
-  <table id="sample-nested-1-2" border="1">
-    <thead is="st-thead" :columns="columns"></thead>
-  </table>
-
-  <h2>Example 4 : Nested 2 Group Columns</h2>
-  <pre>
-| X1 |        X2         | X3 |
-|    | X21 |     X22     |    |
-|    |     | X221 | X222 |    |</pre>
-  <table id="sample-nested-2" border="1">
-    <thead is="st-thead" :columns="columns"></thead>
-  </table>
-
-  <h2>Example 5 : Complex Columns (with column width)</h2>
-  <pre>
-| X1 |     X2    | X3 |         X4        |
-|    | X21 | X22 |    |     X41     | X42 |
-|    |     |     |    | X411 | X412 |     |</pre>
-  <table id="sample-complex-1" border="1">
-    <colgroup is="st-colgroup" :columns="columns"></colgroup>
-    <thead is="st-thead" :columns="columns"></thead>
-  </table>
+  <div class="block"><h1>Component simter-vue-thead</h1></div>
+  <div id="sample1"></div>
+  <div id="sample2"></div>
+  <div id="sample3"></div>
+  <div id="sample4"></div>
+  <div id="sample5"></div>
   <script src="./index.js"></script>
 </body>
 
