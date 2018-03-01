@@ -1,5 +1,5 @@
 /*!
-* simter-vue-thead v0.2.0
+* simter-vue-thead v0.2.1
 * @author RJ.Hwang <rongjihuang@gmail.com>
 * @license MIT
 */
@@ -8,20 +8,6 @@
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
 	(factory((global['simter-vue-thead'] = {})));
 }(this, (function (exports) { 'use strict';
-
-(function(){ if(typeof document !== 'undefined'){ var head=document.head||document.getElementsByTagName('head')[0], style=document.createElement('style'), css=" .st-thead-cell.ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; } .st-thead-cell.hidden { overflow: hidden; white-space: nowrap; } .st-thead-cell.word-wrap { word-break: break-all; } "; style.type='text/css'; if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style); } })();
-
-
-
-
-
-
-
-
-
-
-
-
 
 const component = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',{class:_vm.containerClass},_vm._l((_vm.rows),function(row,rowIndex){return _c('tr',{key:'row-' + rowIndex,class:_vm.rowClass},_vm._l((row),function(cell,cellIndex){return _c('th',{key:'cell-' + cellIndex,class:cell.class || _vm.cellClass,attrs:{"colspan":cell.colspan,"rowspan":cell.rowspan}},[_vm._v(_vm._s(cell.label || cell))])}))}))},staticRenderFns: [],
   replace: true,
