@@ -1,19 +1,29 @@
 /*!
-* simter-vue-thead v0.2.1
+* simter-vue-thead v0.3.0
 * @author RJ.Hwang <rongjihuang@gmail.com>
 * @license MIT
 */
-const component = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',{class:_vm.containerClass},_vm._l((_vm.rows),function(row,rowIndex){return _c('tr',{key:'row-' + rowIndex,class:_vm.rowClass},_vm._l((row),function(cell,cellIndex){return _c('th',{key:'cell-' + cellIndex,class:cell.class || _vm.cellClass,attrs:{"colspan":cell.colspan,"rowspan":cell.rowspan}},[_vm._v(_vm._s(cell.label || cell))])}))}))},staticRenderFns: [],
+const component = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',{class:_vm.$_classes.thead,style:(_vm.$_styles.thead)},_vm._l((_vm.rows),function(row,rowIndex){return _c('tr',{key:'row-' + rowIndex,class:_vm.$_classes.tr,style:(_vm.$_styles.tr)},_vm._l((row),function(cell,cellIndex){return _c('th',{key:'cell-' + cellIndex,class:cell.class ||_vm.$_classes.th,style:(cell.style ||_vm.$_styles.th),attrs:{"colspan":cell.colspan,"rowspan":cell.rowspan}},[_vm._v(_vm._s(cell.label || cell))])}))}))},staticRenderFns: [],
   replace: true,
   props: {
     // The column's 'label' config array, like ['Column1', 'Column2', ...]
     columns: { type: Array, required: true },
-    // The thead tag class
-    containerClass: { type: String, required: false },
-    // The tr tag class
-    rowClass: { type: String, required: false },
-    // The th tag class
-    cellClass: { type: String, required: false }
+    // element class: {thead: ..., tr: ..., th: ...}
+    classes: {
+      type: String | Object | Array,
+      required: false,
+      default() {
+        return [];
+      }
+    },
+    // element style: {thead: ..., tr: ..., th: ...}
+    styles: {
+      type: String | Object | Array,
+      required: false,
+      default() {
+        return {};
+      }
+    }
   },
   computed: {
     /** 
@@ -21,6 +31,24 @@ const component = {render: function(){var _vm=this;var _h=_vm.$createElement;var
      */
     rows() {
       return transform(deepClone(this.columns));
+    },
+    /**
+     * Convert String | Array to Object {table: ...}
+     */
+    $_classes() {
+      if (typeof this.classes === "string" || Array.isArray(this.classes))
+        return { thead: this.classes };
+      else if (typeof this.classes === "object") return this.classes;
+      else return {};
+    },
+    /**
+     * Convert String | Array to Object {table: ...}
+     */
+    $_styles() {
+      if (typeof this.styles === "string" || Array.isArray(this.styles))
+        return { thead: this.styles };
+      else if (typeof this.styles === "object") return this.styles;
+      else return {};
     }
   }
 };
