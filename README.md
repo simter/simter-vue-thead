@@ -11,6 +11,17 @@ Core properties:
 | columns                          | Define table columns
 | &nbsp;&nbsp;&nbsp;&nbsp;label    | The column's visible text
 | &nbsp;&nbsp;&nbsp;&nbsp;children | Define how to group columns
+| classes                          | Define component class
+| &nbsp;&nbsp;&nbsp;&nbsp;thead    | thead class, follow [Vue Class Bindings]
+| &nbsp;&nbsp;&nbsp;&nbsp;tr       | thead/tr class, follow [Vue Class Bindings]
+| &nbsp;&nbsp;&nbsp;&nbsp;th       | thead/tr/th class, follow [Vue Class Bindings]
+| styles                           | Define component style
+| &nbsp;&nbsp;&nbsp;&nbsp;thead    | thead class, follow [Vue Style Bindings]
+| &nbsp;&nbsp;&nbsp;&nbsp;tr       | thead/tr class, follow [Vue Style Bindings]
+| &nbsp;&nbsp;&nbsp;&nbsp;th       | thead/tr/th class, follow [Vue Style Bindings]
+
+[Vue Class Bindings]: https://vuejs.org/v2/guide/class-and-style.html
+[Vue Style Bindings]: https://vuejs.org/v2/guide/class-and-style.html
 
 ## Develop
 

@@ -4,6 +4,7 @@ import example2 from './example2.vue'
 import example3 from './example3.vue'
 import example4 from './example4.vue'
 import example5 from './example5.vue'
+import example6 from './example6.vue'
 
 new Vue({
   el: "#sample1",
@@ -28,4 +29,9 @@ new Vue({
 new Vue({
   el: "#sample5",
   render: h => h(example5)
+})
+
+new Vue({
+  el: "#sample6",
+  render: h => h(example6)
 })
