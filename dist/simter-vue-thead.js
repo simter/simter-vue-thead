@@ -1,5 +1,5 @@
 /*!
-* simter-vue-thead v0.3.2
+* simter-vue-thead v0.4.0
 * @author RJ.Hwang <rongjihuang@gmail.com>
 * @license MIT
 */
@@ -307,16 +307,16 @@
           "tr",
           {
             key: "row-" + rowIndex,
-            class: _vm.$_classes.tr,
-            style: _vm.$_styles.tr
+            class: _vm.$_classes.row,
+            style: _vm.$_styles.row
           },
           _vm._l(row, function(cell, cellIndex) {
             return _c(
               "th",
               {
                 key: "cell-" + cellIndex,
-                class: cell.class || _vm.$_classes.th,
-                style: cell.style || _vm.$_styles.th,
+                class: [_vm.$_classes.cell, cell.headerClass],
+                style: [_vm.$_styles.cell, cell.headerStyle],
                 attrs: { colspan: cell.colspan, rowspan: cell.rowspan }
               },
               [_vm._v(_vm._s(cell.label || cell))]
