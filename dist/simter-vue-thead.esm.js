@@ -1,5 +1,5 @@
 /*!
-* simter-vue-thead v0.4.0
+* simter-vue-thead v0.4.2
 * @author RJ.Hwang <rongjihuang@gmail.com>
 * @license MIT
 */
