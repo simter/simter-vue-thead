@@ -1,14 +1,14 @@
 <template>
 <thead :class="$_classes.thead" :style="$_styles.thead">
   <tr v-for="(row, rowIndex) in rows" :key="'row-' + rowIndex"
-      :class="$_classes.tr"
-      :style="$_styles.tr">
+      :class="$_classes.row"
+      :style="$_styles.row">
     <th v-for="(cell, cellIndex) in row"
         :key="'cell-' + cellIndex"
         :colspan="cell.colspan"
         :rowspan="cell.rowspan"
-        :class="cell.class ||$_classes.th"
-        :style="cell.style ||$_styles.th"
+        :class="[$_classes.cell, cell.headerClass]"
+        :style="[$_styles.cell, cell.headerStyle]"
         >{{cell.label || cell}}</th>
   </tr>
 </thead>

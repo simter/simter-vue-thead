@@ -15,11 +15,11 @@ export default {
   data() {
     return {
       columns: [{ label: "X1" }, { label: "X2" }, { label: "X3" }],
-      classes: {thead: "container", tr: "row", th: "cell"},
+      classes: {thead: "container", row: "st-header-row", cell: "st-header-cell"},
       styles: {
         thead: {border: "none"}, 
-        tr: {border: "4px solid blue"}, 
-        th: {border: "inherit", color: "red"}
+        row: {border: "4px solid blue"}, 
+        cell: {border: "inherit", color: "red"}
       }
     };
   },
