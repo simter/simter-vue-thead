@@ -6,19 +6,22 @@ Demo or document is [here](https://simter.github.io/simter-vue-thead).
 
 Core properties:
 
-| Name                             | Description
-|----------------------------------|--------------------
-| columns                          | Define table columns
-| &nbsp;&nbsp;&nbsp;&nbsp;label    | The column's visible text
-| &nbsp;&nbsp;&nbsp;&nbsp;children | Define how to group columns
-| classes                          | Define component class
-| &nbsp;&nbsp;&nbsp;&nbsp;thead    | thead class, follow [Vue Class Bindings]
-| &nbsp;&nbsp;&nbsp;&nbsp;tr       | thead/tr class, follow [Vue Class Bindings]
-| &nbsp;&nbsp;&nbsp;&nbsp;th       | thead/tr/th class, follow [Vue Class Bindings]
-| styles                           | Define component style
-| &nbsp;&nbsp;&nbsp;&nbsp;thead    | thead class, follow [Vue Style Bindings]
-| &nbsp;&nbsp;&nbsp;&nbsp;tr       | thead/tr class, follow [Vue Style Bindings]
-| &nbsp;&nbsp;&nbsp;&nbsp;th       | thead/tr/th class, follow [Vue Style Bindings]
+| Name_________ | Require | ValueType | Description
+|---------------|---------|-----------|--------------------
+| columns       | true    | \[{}\]    | Define table columns
+| ├ label       | true    | String    | The column's visible text
+| ├ width       | false   | String    | The column's width, such as `'2em'`
+| ├ children    | false   | \[{}\]    | The child group columns. `id` and `width` will be ignored if define this property
+| ├ headerClass | false   | String    | The specific class for this column's header cell th element
+| ├ headerStyle | false   | String    | The specific style for this column's header cell th element
+| classes       | false   | {}        | Define component class
+| ├ thead       | false   | String    | thead class, follow [Vue Class Bindings]
+| ├ row         | false   | String    | thead/tr class, follow [Vue Class Bindings]
+| ├ cell        | false   | String    | thead/tr/th class, follow [Vue Class Bindings]
+| styles        | false   | {}        | Define component style
+| ├ thead       | false   | String    | thead class, follow [Vue Style Bindings]
+| ├ row         | false   | String    | thead/tr class, follow [Vue Style Bindings]
+| ├ cell        | false   | String    | thead/tr/th class, follow [Vue Style Bindings]
 
 [Vue Class Bindings]: https://vuejs.org/v2/guide/class-and-style.html
 [Vue Style Bindings]: https://vuejs.org/v2/guide/class-and-style.html
@@ -27,7 +30,7 @@ Core properties:
 
 ```
 yarn install  // or npm install
-npm run dev
+yarn run dev  // or npm run dev
 ```
 
 Use [parcel] to run the development debug.
@@ -35,7 +38,7 @@ Use [parcel] to run the development debug.
 ## Build
 
 ```
-npm run build
+yarn run build  // or npm run build
 ```
 
 Use [rollup] package the component to `dist` directory.
@@ -72,9 +75,7 @@ Html template:
 Generated html:
 
 ```html
-<!--
 | X1 | X2 | X3 |
--->
 <table>
   <thead>
     <tr>
@@ -129,10 +130,8 @@ Html template:
 Generated html:
 
 ```html
-<!--
 | X1 |    X2     |    X3     |
 |    | X21 | X22 | X31 | X32 |
--->
 <table>
   <thead>
     <tr>
@@ -206,11 +205,9 @@ Html template:
 Generated html:
 
 ```html
-<!--
 | X1 |    X2     | X3 |        X4         |
 |    | X21 | X22 |    |     X41     | X42 |
 |    |     |     |    | X411 | X412 |     |
--->
 <table>
   <thead>
     <tr>
