@@ -1,5 +1,5 @@
 /*!
-* simter-vue-thead v0.4.2
+* simter-vue-thead v0.4.3
 * @author RJ.Hwang <rongjihuang@gmail.com>
 * @license MIT
 */
@@ -237,7 +237,8 @@
    * 1. ["a", "b"] flatten to ["a", "b"]
    * 2. ["a", {children: ["b", "c"]}] flatten to ["a", {children: ["b", "c"]}, "b", "c"]
    */
-  function flattenWithSelf(columns, removeChildren = true) {
+  function flattenWithSelf(columns, removeChildren) {
+    if (removeChildren === null || removeChildren === undefined) removeChildren = true;
     let result = columns.reduce((a, b) => {
       if (b.children) {
         return a.concat(b, flattenWithSelf(b.children, removeChildren));
@@ -321,9 +322,11 @@
               },
               [_vm._v(_vm._s(cell.label || cell))]
             )
-          })
+          }),
+          0
         )
-      })
+      }),
+      0
     )
   };
   var __vue_staticRenderFns__ = [];
@@ -346,7 +349,7 @@
       const component$$1 = (typeof script === 'function' ? script.options : script) || {};
 
       // For security concerns, we use only base name in production mode.
-      component$$1.__file = "D:\\work\\github-simter\\simter-vue\\simter-vue-thead\\src\\thead.vue";
+      component$$1.__file = "D:\\work\\simter\\simter-vue\\simter-vue-thead\\src\\thead.vue";
 
       if (!component$$1.render) {
         component$$1.render = template.render;
