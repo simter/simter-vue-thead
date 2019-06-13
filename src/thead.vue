@@ -226,7 +226,8 @@ function leafCount(column) {
  * 1. ["a", "b"] flatten to ["a", "b"]
  * 2. ["a", {children: ["b", "c"]}] flatten to ["a", {children: ["b", "c"]}, "b", "c"]
  */
-function flattenWithSelf(columns, removeChildren = true) {
+function flattenWithSelf(columns, removeChildren) {
+  if (removeChildren === null || removeChildren === undefined) removeChildren = true;
   let result = columns.reduce((a, b) => {
     if (b.children) {
       return a.concat(b, flattenWithSelf(b.children, removeChildren));
